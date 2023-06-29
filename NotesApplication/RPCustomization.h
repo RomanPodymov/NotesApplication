@@ -7,7 +7,6 @@
 //
 
 @import Foundation;
-#import "JSONModel.h"
 #import "RPUtilities.h"
 
 #define CUSTOMIZATION_PROPERTY @property (nullable, nonatomic, strong, readonly)

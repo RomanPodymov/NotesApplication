@@ -8,8 +8,8 @@
 
 #import "RPUtilities.h"
 #import "RPLocalizationMaster.h"
-#import "BlocksKit.h"
-// #import "SVProgressHUD.h"
+@import BlocksKit;
+@import SVProgressHUD;
 
 @implementation RPListItemParams
 
@@ -27,11 +27,11 @@
 @implementation RPLoaderIndicator
 
 +(void)show {
-    // [SVProgressHUD show];
+    [SVProgressHUD show];
 }
 
 +(void)hide {
-    // [SVProgressHUD dismiss];
+    [SVProgressHUD dismiss];
 }
 
 @end

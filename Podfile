@@ -5,9 +5,10 @@ target 'NotesApplicationApp' do
 
   pod 'JSONModel', '1.8.0'
   pod 'UIColor+Hex', '1.0.1'
-  pod 'XMLDictionary'
-  pod 'BlocksKit'
-  pod 'PAPreferences'
+  pod 'XMLDictionary', '1.4.1'
+  pod 'BlocksKit', '2.2.5'
+  pod 'PAPreferences', '0.5'
+  pod 'SVProgressHUD', '2.2.5'
 end
 
 post_install do |installer|

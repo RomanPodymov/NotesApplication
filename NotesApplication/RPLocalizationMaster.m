@@ -6,8 +6,8 @@
 //  Copyright © 2023 NotesApplication. All rights reserved.
 //
 
-#import "XMLDictionary.h"
-#import "BlocksKit.h"
+@import XMLDictionary;
+@import BlocksKit;
 #import "RPLocalizationMaster.h"
 #import "RPPreferences.h"
 

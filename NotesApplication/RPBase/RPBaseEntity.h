@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-#import "JSONModel.h"
+@import JSONModel;
 
 extern NSString* const JSON_KEY_ID;
 extern NSString* const JSON_KEY_TITLE;

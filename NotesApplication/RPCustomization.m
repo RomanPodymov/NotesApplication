@@ -7,7 +7,7 @@
 //
 
 #import "RPCustomization.h"
-#import "UIColor+Hex.h"
+@import UIColor_Hex;
 
 NSString* const CUSTOMIZATION_FILE_NAME = @"Customization";
 NSString* const CUSTOMIZATION_FILE_EXTENSION = @"plist";

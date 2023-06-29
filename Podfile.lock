@@ -16,6 +16,7 @@ PODS:
     - BlocksKit/DynamicDelegate
   - JSONModel (1.8.0)
   - PAPreferences (0.5)
+  - SVProgressHUD (2.2.5)
   - "UIColor+Hex (1.0.1)":
     - "UIColor+Hex/NSColor (= 1.0.1)"
     - "UIColor+Hex/UIColor (= 1.0.1)"
@@ -23,17 +24,19 @@ PODS:
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
-  - BlocksKit
+  - BlocksKit (= 2.2.5)
   - JSONModel (= 1.8.0)
-  - PAPreferences
+  - PAPreferences (= 0.5)
+  - SVProgressHUD (= 2.2.5)
   - "UIColor+Hex (= 1.0.1)"
-  - XMLDictionary
+  - XMLDictionary (= 1.4.1)
 
 SPEC REPOS:
   trunk:
     - BlocksKit
     - JSONModel
     - PAPreferences
+    - SVProgressHUD
     - "UIColor+Hex"
     - XMLDictionary
 
@@ -41,9 +44,10 @@ SPEC CHECKSUMS:
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   PAPreferences: 9f0ffb1e67174a0df001af9d3320166ceb9ee6f5
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 0f62d347a7f5d0d6a643cf1e3b74c5b07b768291
+PODFILE CHECKSUM: 6bb652d8f59fff7632c88fe460182c82cb433011
 
 COCOAPODS: 1.11.3

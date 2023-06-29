@@ -1,0 +1,13 @@
+name: NotesApplication
+options:
+  bundleIdPrefix: com.notesapplication
+  deploymentTarget:
+    iOS: 14.0
+  xcodeVersion: "14.3.1"
+targets:
+  NotesApplicationApp:
+    type: application
+    platform: iOS
+    sources: [NotesApplication]
+    info:
+      path: NotesApplication/Info.plist

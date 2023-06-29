@@ -31,6 +31,16 @@ PODS:
     - BlocksKit/DynamicDelegate
   - JSONModel (1.8.0)
   - PAPreferences (0.5)
+  - PromiseKit (8.0.0):
+    - PromiseKit/CorePromise (= 8.0.0)
+    - PromiseKit/Foundation (= 8.0.0)
+    - PromiseKit/UIKit (= 8.0.0)
+  - PromiseKit/CorePromise (8.0.0)
+  - PromiseKit/Foundation (8.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (8.0.0):
+    - PromiseKit/CorePromise
+  - PureLayout (3.1.9)
   - SVProgressHUD (2.2.5)
   - "UIColor+Hex (1.0.1)":
     - "UIColor+Hex/NSColor (= 1.0.1)"
@@ -43,6 +53,8 @@ DEPENDENCIES:
   - BlocksKit (= 2.2.5)
   - JSONModel (= 1.8.0)
   - PAPreferences (= 0.5)
+  - PromiseKit
+  - PureLayout
   - SVProgressHUD (= 2.2.5)
   - "UIColor+Hex (= 1.0.1)"
   - XMLDictionary (= 1.4.1)
@@ -53,6 +65,8 @@ SPEC REPOS:
     - BlocksKit
     - JSONModel
     - PAPreferences
+    - PromiseKit
+    - PureLayout
     - SVProgressHUD
     - "UIColor+Hex"
     - XMLDictionary
@@ -62,10 +76,12 @@ SPEC CHECKSUMS:
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   PAPreferences: 9f0ffb1e67174a0df001af9d3320166ceb9ee6f5
+  PromiseKit: 7039707ba8764b6ce98501debce2489561b038a5
+  PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 5728196c6c0b09480c518e1618d99328127b2e0e
+PODFILE CHECKSUM: 5aa50391b12f109d19f7736b497cd099e4654fe7
 
 COCOAPODS: 1.11.3

@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -24,6 +39,7 @@ PODS:
   - XMLDictionary (1.4.1)
 
 DEPENDENCIES:
+  - AFNetworking (= 3.2.1)
   - BlocksKit (= 2.2.5)
   - JSONModel (= 1.8.0)
   - PAPreferences (= 0.5)
@@ -33,6 +49,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - BlocksKit
     - JSONModel
     - PAPreferences
@@ -41,6 +58,7 @@ SPEC REPOS:
     - XMLDictionary
 
 SPEC CHECKSUMS:
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   PAPreferences: 9f0ffb1e67174a0df001af9d3320166ceb9ee6f5
@@ -48,6 +66,6 @@ SPEC CHECKSUMS:
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 6bb652d8f59fff7632c88fe460182c82cb433011
+PODFILE CHECKSUM: 5728196c6c0b09480c518e1618d99328127b2e0e
 
 COCOAPODS: 1.11.3

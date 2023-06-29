@@ -9,6 +9,7 @@ target 'NotesApplicationApp' do
   pod 'BlocksKit', '2.2.5'
   pod 'PAPreferences', '0.5'
   pod 'SVProgressHUD', '2.2.5'
+  pod 'AFNetworking', '3.2.1'
 end
 
 post_install do |installer|

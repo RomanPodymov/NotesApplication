@@ -1,5 +1,5 @@
 //
-//  RPPreferences.h
+//  RPNotesRequest.h
 //  NotesApplication
 //
 //  Created by Roman Podymov on 29/06/2023.
@@ -7,11 +7,9 @@
 //
 
 @import Foundation;
-@import PAPreferences;
-#import "RPLocale.h"
+#import "RPBaseNotesRequest.h"
+#import "RPNote.h"
 
-@interface RPPreferences: PAPreferences
-
-@property (nonatomic, assign) LOCALE_ID* selectedLocale;
+@interface RPNotesRequest: RPBaseNotesRequest<RPNotesList*>
 
 @end

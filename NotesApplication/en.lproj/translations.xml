@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="message_empty_data">No data.</string>
+    <string name="message_error_get_data">Data update failed, please try again later.</string>
+    <string name="bar_languages">Languages</string>
+    <string name="bar_add">Add</string>
+    <string name="bar_back">Back</string>
+    <string name="bar_save">Save</string>
+    <string name="bar_more">More</string>
+    <string name="error">Error</string>
+    <string name="message">Message</string>
+    <string name="cannot_add_note">Failed to save note</string>
+    <string name="cannot_edit_note">Failed to edit note</string>
+    <string name="cannot_delete_note">Failed to delete note</string>
+    <string name="add_note_ok">The note was added successfully</string>
+    <string name="edit_note_ok">The note was edit successfully</string>
+    <string name="delete_note_ok">The note was deleted successfully</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+</resources>

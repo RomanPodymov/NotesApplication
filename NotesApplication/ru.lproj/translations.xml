@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="message_empty_data">Нет данных.</string>
+    <string name="message_error_get_data">При получении данных произошла ошибка, попробуйте повторить позднее.</string>
+    <string name="bar_languages">Языки</string>
+    <string name="bar_add">Добавить</string>
+    <string name="bar_back">Назад</string>
+    <string name="bar_save">Сохранить</string>
+    <string name="bar_more">Ещё</string>
+    <string name="error">Ошибка</string>
+    <string name="message">Сообщение</string>
+    <string name="cannot_add_note">Невозможно сохранить новую заметку</string>
+    <string name="cannot_edit_note">Невозможно внести изменения в заметку</string>
+    <string name="cannot_delete_note">Невозможно удалить заметку</string>
+    <string name="add_note_ok">Заметка была успешно добавлена</string>
+    <string name="edit_note_ok">Заметка была успешно отредактирована</string>
+    <string name="delete_note_ok">Заметка была успешно удалена</string>
+    <string name="btn_ok">Хорошо</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_edit">Редактировать</string>
+    <string name="btn_delete">Удалить</string>
+</resources>

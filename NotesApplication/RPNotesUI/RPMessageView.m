@@ -6,7 +6,7 @@
 //  Copyright © 2023 NotesApplication. All rights reserved.
 //
 
-#import "PureLayout.h"
+@import PureLayout;
 #import "RPMessageView.h"
 #import "RPLocalizationMaster.h"
 

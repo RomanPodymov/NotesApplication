@@ -10,9 +10,9 @@ target 'NotesApplicationApp' do
   pod 'PAPreferences', '0.5'
   pod 'SVProgressHUD', '2.2.5'
   pod 'AFNetworking', '3.2.1'
-  pod 'PromiseKit'
-  pod 'PureLayout'
-  pod 'Hero'
+  pod 'PromiseKit', '8.0.0'
+  pod 'PureLayout', '3.1.9'
+  pod 'Hero', '1.6.2'
 end
 
 post_install do |installer|

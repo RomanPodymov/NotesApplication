@@ -52,11 +52,11 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
   - BlocksKit (= 2.2.5)
-  - Hero
+  - Hero (= 1.6.2)
   - JSONModel (= 1.8.0)
   - PAPreferences (= 0.5)
-  - PromiseKit
-  - PureLayout
+  - PromiseKit (= 8.0.0)
+  - PureLayout (= 3.1.9)
   - SVProgressHUD (= 2.2.5)
   - "UIColor+Hex (= 1.0.1)"
   - XMLDictionary (= 1.4.1)
@@ -86,6 +86,6 @@ SPEC CHECKSUMS:
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: bbae53df974dce6738db6b90320c8a1a0d421203
+PODFILE CHECKSUM: 3eebaf7b0fc56284dc52cd79b3bd4812bb41efe1
 
 COCOAPODS: 1.11.3

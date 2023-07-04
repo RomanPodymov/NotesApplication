@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-// #import "RPLocalizationMaster.h"
+#import "RPLocalizationMaster.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +16,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // [RPLocalizationMaster sharedInstance];
+    [RPLocalizationMaster sharedInstance];
     return YES;
 }
 

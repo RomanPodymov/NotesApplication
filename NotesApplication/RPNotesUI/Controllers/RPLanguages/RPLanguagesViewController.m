@@ -9,8 +9,8 @@
 #import "RPLanguagesViewController.h"
 #import "RPCustomization.h"
 #import "RPLocaleButton.h"
-#import "BlocksKit.h"
-#import "PureLayout.h"
+@import BlocksKit;
+@import PureLayout;
 
 @interface RPLanguagesViewController ()
 

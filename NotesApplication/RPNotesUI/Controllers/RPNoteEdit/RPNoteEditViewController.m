@@ -9,7 +9,7 @@
 #import "RPNoteEditViewController.h"
 #import "RPUtilities.h"
 #import "RPLocalizationMaster.h"
-#import "PureLayout.h"
+@import PureLayout;
 
 typedef NS_ENUM(NSUInteger, NOTE_CONTROLLER_ERROR_CODE) {
     FAILED_ADD,

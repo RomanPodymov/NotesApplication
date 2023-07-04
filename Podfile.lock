@@ -29,6 +29,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Hero (1.6.2)
   - JSONModel (1.8.0)
   - PAPreferences (0.5)
   - PromiseKit (8.0.0):
@@ -51,6 +52,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
   - BlocksKit (= 2.2.5)
+  - Hero
   - JSONModel (= 1.8.0)
   - PAPreferences (= 0.5)
   - PromiseKit
@@ -63,6 +65,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - BlocksKit
+    - Hero
     - JSONModel
     - PAPreferences
     - PromiseKit
@@ -74,6 +77,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
+  Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   PAPreferences: 9f0ffb1e67174a0df001af9d3320166ceb9ee6f5
   PromiseKit: 7039707ba8764b6ce98501debce2489561b038a5
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 5aa50391b12f109d19f7736b497cd099e4654fe7
+PODFILE CHECKSUM: bbae53df974dce6738db6b90320c8a1a0d421203
 
 COCOAPODS: 1.11.3

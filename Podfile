@@ -12,6 +12,7 @@ target 'NotesApplicationApp' do
   pod 'AFNetworking', '3.2.1'
   pod 'PromiseKit'
   pod 'PureLayout'
+  pod 'Hero'
 end
 
 post_install do |installer|

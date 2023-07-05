@@ -2,7 +2,7 @@ platform :ios, '14.0'
 
 target 'NotesApplicationApp' do
   use_frameworks!
-
+  
   pod 'JSONModel', '1.8.0'
   pod 'UIColor+Hex', '1.0.1'
   pod 'XMLDictionary', '1.4.1'
@@ -13,6 +13,12 @@ target 'NotesApplicationApp' do
   pod 'PromiseKit', '8.0.0'
   pod 'PureLayout', '3.1.9'
   pod 'Hero', '1.6.2'
+  
+  target 'NotesApplicationTests' do
+    inherit! :search_paths
+    
+    pod 'OCMock'
+  end
 end
 
 post_install do |installer|

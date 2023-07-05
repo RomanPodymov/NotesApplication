@@ -31,6 +31,7 @@ PODS:
     - BlocksKit/DynamicDelegate
   - Hero (1.6.2)
   - JSONModel (1.8.0)
+  - OCMock (3.9.1)
   - PAPreferences (0.5)
   - PromiseKit (8.0.0):
     - PromiseKit/CorePromise (= 8.0.0)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - BlocksKit (= 2.2.5)
   - Hero (= 1.6.2)
   - JSONModel (= 1.8.0)
+  - OCMock
   - PAPreferences (= 0.5)
   - PromiseKit (= 8.0.0)
   - PureLayout (= 3.1.9)
@@ -67,6 +69,7 @@ SPEC REPOS:
     - BlocksKit
     - Hero
     - JSONModel
+    - OCMock
     - PAPreferences
     - PromiseKit
     - PureLayout
@@ -79,6 +82,7 @@ SPEC CHECKSUMS:
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   Hero: c69009dbc9e2f0472e081adc644dba05fcedae72
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  OCMock: 9491e4bec59e0b267d52a9184ff5605995e74be8
   PAPreferences: 9f0ffb1e67174a0df001af9d3320166ceb9ee6f5
   PromiseKit: 7039707ba8764b6ce98501debce2489561b038a5
   PureLayout: 5fb5e5429519627d60d079ccb1eaa7265ce7cf88
@@ -86,6 +90,6 @@ SPEC CHECKSUMS:
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 3eebaf7b0fc56284dc52cd79b3bd4812bb41efe1
+PODFILE CHECKSUM: 8ebaf9abef279ab44368bdf78837b9d10be91ccf
 
 COCOAPODS: 1.11.3

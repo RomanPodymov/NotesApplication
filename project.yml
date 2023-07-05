@@ -11,3 +11,11 @@ targets:
     sources: [NotesApplication]
     info:
       path: NotesApplication/Info.plist
+  NotesApplicationTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [NotesApplicationTests]
+    dependencies:
+      - target: NotesApplicationApp
+    info:
+      path: NotesApplicationTests/Info.plist

@@ -21,7 +21,7 @@ typedef void(^NoteHandler)(id _Nullable);
 
 @interface RPNoteEditViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *textViewNote;
+@property (weak, nonatomic) UITextView *textViewNote;
 
 @end
 
@@ -29,12 +29,16 @@ typedef void(^NoteHandler)(id _Nullable);
 
 #pragma mark UIKit methods
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)addSubviews {
+    [super addSubviews];
+    UITextView *textViewNote = [UITextView new];
+    [self.view addSubview:textViewNote];
+    self.textViewNote = textViewNote;
     [self setupTextViewNote];
 }
 
-- (void)updateViewConstraints {
+- (void)setupConstraints {
+    [super setupConstraints];
     NSNumber* textViewNoteTopOffset = RPCustomization.sharedInstance.noteEditGeometry.textViewTopOffset;
     NSNumber* textViewNoteLeftOffset = RPCustomization.sharedInstance.noteEditGeometry.textViewLeftOffset;
     NSNumber* textViewNoteBottomOffset = RPCustomization.sharedInstance.noteEditGeometry.textViewBottomOffset;
@@ -43,13 +47,10 @@ typedef void(^NoteHandler)(id _Nullable);
                                                                                textViewNoteLeftOffset.floatValue,
                                                                                textViewNoteBottomOffset.floatValue,
                                                                                textViewNoteRightOffset.floatValue)];
-    [super updateViewConstraints];
 }
 
-- (IBAction)onBackBarButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-
-    }];
+- (void)onLeftBarButtonItemTap {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)onRightBarButtonPressed:(id)sender {

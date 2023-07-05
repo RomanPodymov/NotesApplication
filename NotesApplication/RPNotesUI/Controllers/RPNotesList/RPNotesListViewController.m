@@ -16,7 +16,6 @@
 #import "RPLocalizationMaster.h"
 #import "RPCustomization.h"
 #import "RPNoteEditViewController.h"
-#import "RPNoteEditNavigationController.h"
 #import "RPNotesListTableViewCell.h"
 #import "RPLanguagesViewController.h"
 
@@ -25,10 +24,6 @@ NSString* const NOTES_CELL_ID = @"NOTES_CELL_ID";
 NSInteger const TAG_NOTES_REFRESH_CONTROL = 1010;
 
 NSString* const TABLE_VIEW_ACCESS_LABEL = @"Notes table view";
-
-NSString* const segueShowNoteAdd = @"showNoteAdd";
-NSString* const segueShowNoteEdit = @"showNoteEdit";
-NSString* const segueShowLanguages = @"showLanguages";
 
 @interface RPNotesListViewController ()
 
@@ -57,6 +52,17 @@ NSString* const segueShowLanguages = @"showLanguages";
     [self.navigationController pushViewController:languagesViewController animated:YES];
 }
 
+-(void)onRightBarButtonItemTap {
+    [self openEditScreen:CONTROLLER_MODE_ADD note:nil];
+}
+
+- (void)openEditScreen:(CONTROLLER_MODE)mode note:(RPNote* _Nullable)note {
+    RPNoteEditViewController* noteEditViewController = [RPNoteEditViewController new];
+    noteEditViewController.controllerMode = mode;
+    [noteEditViewController setupWithData:note];
+    [self.navigationController pushViewController:noteEditViewController animated:YES];
+}
+
 #pragma mark UIKit methods
 
 - (void)setupConstraints {
@@ -71,43 +77,6 @@ NSString* const segueShowLanguages = @"showLanguages";
     [self.notesMessageView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.notesTableView];
     [self.notesMessageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.view];
     [self.notesMessageView autoSetDimension:ALDimensionHeight toSize:RPCustomization.sharedInstance.notesGeometry.messageHeight.floatValue];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:segueShowNoteAdd] ||
-        [segue.identifier isEqualToString:segueShowNoteEdit]) {
-        if ([segue.destinationViewController isKindOfClass:[RPNoteEditNavigationController class]]) {
-            [self prepareNoteEditController:segue.destinationViewController
-                                       note:[RPNotesListViewController noteFromSender:sender]
-                             controllerMode:[RPNotesListViewController controllerModeForSegue:segue.identifier]];
-        }
-    } else if ([segue.identifier isEqualToString:segueShowLanguages]) {
-
-    }
-}
-
-+ (RPNote* _Nullable)noteFromSender:(id)sender {
-    if ([sender isKindOfClass:[RPNote class]]) {
-        return sender;
-    }
-    return nil;
-}
-
-+ (CONTROLLER_MODE)controllerModeForSegue:(NSString* const)segueName {
-    if ([segueName isEqualToString:segueShowNoteAdd]) {
-        return CONTROLLER_MODE_ADD;
-    } else if ([segueName isEqualToString:segueShowNoteEdit]) {
-        return CONTROLLER_MODE_WATCH;
-    }
-    return CONTROLLER_MODE_UNKNOWN;
-}
-
-- (void)prepareNoteEditController:(RPNoteEditNavigationController*)noteEditNavigationController
-                             note:(RPNote*)note
-                   controllerMode:(CONTROLLER_MODE)controllerMode {
-    RPNoteEditViewController* noteEditController = noteEditNavigationController.viewControllers.firstObject;
-    noteEditController.controllerMode = controllerMode;
-    [noteEditController setupWithData:note];
 }
 
 #pragma mark Bar customization
@@ -210,7 +179,7 @@ NSString* const segueShowLanguages = @"showLanguages";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:segueShowNoteEdit sender:[_notes objectAtIndex:indexPath.row]];
+    [self openEditScreen:CONTROLLER_MODE_WATCH note:self.notes[indexPath.row]];
 }
 
 @end

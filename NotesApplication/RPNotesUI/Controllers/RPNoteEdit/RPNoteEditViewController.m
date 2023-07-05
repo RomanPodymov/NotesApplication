@@ -34,10 +34,6 @@ typedef void(^NoteHandler)(id _Nullable);
     [self setupTextViewNote];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (void)updateViewConstraints {
     NSNumber* textViewNoteTopOffset = RPCustomization.sharedInstance.noteEditGeometry.textViewTopOffset;
     NSNumber* textViewNoteLeftOffset = RPCustomization.sharedInstance.noteEditGeometry.textViewLeftOffset;

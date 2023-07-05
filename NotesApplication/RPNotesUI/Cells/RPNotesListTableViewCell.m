@@ -13,18 +13,24 @@
 
 @interface RPNotesListTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *labelNoteShortDescription;
+@property (weak, nonatomic) UILabel *labelNoteShortDescription;
 
 @end
 
 @implementation RPNotesListTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    [self setNeedsUpdateConstraints];
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        UILabel* labelNoteShortDescription = [[UILabel alloc] initWithFrame:CGRectZero];
+        [self.contentView addSubview:labelNoteShortDescription];
+        self.labelNoteShortDescription = labelNoteShortDescription;
+        [self setupConstraints];
+    }
+    return self;
 }
 
-- (void)updateConstraints {
+- (void)setupConstraints {
     [self.labelNoteShortDescription autoPinEdge:ALEdgeLeading
                                          toEdge:ALEdgeLeading
                                          ofView:self.contentView

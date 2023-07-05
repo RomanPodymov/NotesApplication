@@ -22,14 +22,6 @@
 
 #pragma mark UIKit methods
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (void)updateViewConstraints {
     NSNumber* localesStackViewTopOffset = RPCustomization.sharedInstance.langsGeometry.buttonsTopOffset;
     UIEdgeInsets localesStackViewInsets = UIEdgeInsetsMake(localesStackViewTopOffset.floatValue, 0.0, 0.0, 0.0);

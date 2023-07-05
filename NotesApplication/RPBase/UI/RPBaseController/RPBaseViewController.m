@@ -8,6 +8,7 @@
 
 #import "RPBaseViewController.h"
 #import "BlocksKit.h"
+#import "RPNotesListTableViewCell.h"
 
 #define LOADER_HANDLER(METHOD_TO_CALL_WITH_DATA, RECEIVED_DATA) \
     RPBaseViewController* strongSelf = weakSelf; \
@@ -43,6 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addSubviews];
     [self observeLocaleChanges];
     [self setupStyles];
     [self setupBarAndCustomize];
@@ -79,10 +81,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark Custom methods
 
 -(void)commonInit {
@@ -90,6 +88,10 @@
     _networkDataPromiseGenerator = [[RPPromiseGenerator alloc] initWithDataProvider:_networkDataProvider];
     _preferencesDataProvider = [RPPreferencesDataProvider new];
     _preferencesDataPromiseGenerator = [[RPPromiseGenerator alloc] initWithDataProvider:_preferencesDataProvider];
+}
+
+-(void)addSubviews {
+    
 }
 
 - (CONTROLLER_MODE)controllerMode {
@@ -144,9 +146,9 @@
     id minArrayCount = [arraysCount valueForKeyPath:@"@min.unsignedIntegerValue"];
     if ([minArrayCount isKindOfClass:[NSNumber class]]) {
         for (NSUInteger i = 0; i < ((NSNumber*)minArrayCount).unsignedIntegerValue; ++i) {
-            UINib* nibForCell = [UINib nibWithNibName:cellFiles[i] bundle:nil];
             UITableView* tableViewForTag = [self.view viewWithTag:tableViewTags[i].integerValue];
-            [tableViewForTag registerNib:nibForCell forCellReuseIdentifier:cellIDs[i]];
+            // [tableViewForTag registerNib:nibForCell forCellReuseIdentifier:cellIDs[i]];
+            [tableViewForTag registerClass:[RPNotesListTableViewCell class] forCellReuseIdentifier:@"NOTES_CELL_ID"];
         }
     }
 }

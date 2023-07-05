@@ -31,23 +31,26 @@ NSString* const segueShowLanguages = @"showLanguages";
 
 @interface RPNotesListViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *notesTableView;
-@property (weak, nonatomic) IBOutlet RPMessageView *notesMessageView;
+@property (weak, nonatomic) UITableView *notesTableView;
+@property (weak, nonatomic) RPMessageView *notesMessageView;
 
 @end
 
 @implementation RPNotesListViewController
 
-#pragma mark UIKit methods
+#pragma mark Custom methods
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)addSubviews {
     self.notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
+    UITableView *notesTableView = [[UITableView alloc] initWithFrame:CGRectZero];
+    notesTableView.tag = TAG_NOTES_TABLE_VIEW;
+    notesTableView.delegate = self;
+    notesTableView.dataSource = self;
+    [self.view addSubview:notesTableView];
+    _notesTableView = notesTableView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+#pragma mark UIKit methods
 
 - (void)updateViewConstraints {
     UIEdgeInsets tableViewInsets = UIEdgeInsetsZero;

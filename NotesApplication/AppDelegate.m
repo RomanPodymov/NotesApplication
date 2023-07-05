@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RPLocalizationMaster.h"
+#import "RPNotesNavigationController.h"
+#import "RPNotesListViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [RPLocalizationMaster sharedInstance];
+    
+    _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    RPNotesListViewController* notesListViewController = [RPNotesListViewController new];
+    RPNotesNavigationController* notesNavigationController = [[RPNotesNavigationController alloc] initWithRootViewController:notesListViewController];
+    _window.rootViewController = notesNavigationController;
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 

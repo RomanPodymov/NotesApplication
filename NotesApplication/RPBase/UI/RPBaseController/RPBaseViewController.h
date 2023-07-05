@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, CONTROLLER_MODE) {
 
 #pragma mark Custom methods
 -(void)commonInit;
+-(void)addSubviews;
 -(void)onControllerModeChanged;
 #pragma mark Bar customization
 -(NSString* _Nullable)textForLeftBarItem;

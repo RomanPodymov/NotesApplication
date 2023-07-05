@@ -7,7 +7,7 @@
 //
 
 #import "RPNotesRequest.h"
-#import "BlocksKit.h"
+@import BlocksKit;
 
 @implementation RPNotesRequest
 

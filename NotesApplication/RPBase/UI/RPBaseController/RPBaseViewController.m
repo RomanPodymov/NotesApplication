@@ -7,8 +7,7 @@
 //
 
 #import "RPBaseViewController.h"
-#import "BlocksKit.h"
-#import "RPNotesListTableViewCell.h"
+@import BlocksKit;
 
 #define LOADER_HANDLER(METHOD_TO_CALL_WITH_DATA, RECEIVED_DATA) \
     RPBaseViewController* strongSelf = weakSelf; \
@@ -48,13 +47,13 @@
     [self observeLocaleChanges];
     [self setupStyles];
     [self setupBarAndCustomize];
-    [self setupTableViews:[self tableViewTags] cellFiles:[self cellFiles] cellIDs:[self cellIDs]];
+    [self setupTableViews:[self tableViewTags] cellClasses:[self cellClasses] cellIDs:[self cellIDs]];
     [self setupTableViews:[self tableViewTags] refreshControlsTags:[self refreshControlsTags]];
+    [self setupConstraints];
     const LOAD_DATA_STRATEGY loadDataStrategyValue = [self loadDataStrategy];
     if (loadDataStrategyValue == ON_VIEW_DID_LOAD) {
         [self loadData:nil];
     }
-    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)setupBarAndCustomize {
@@ -94,6 +93,10 @@
     
 }
 
+-(void)setupConstraints {
+    
+}
+
 - (CONTROLLER_MODE)controllerMode {
     return _controllerMode;
 }
@@ -123,7 +126,7 @@
     return @[];
 }
 
--(NSArray<NSString*>* _Nonnull)cellFiles {
+-(NSArray<NSString*>* _Nonnull)cellClasses {
     return @[];
 }
 
@@ -136,19 +139,18 @@
 }
 
 -(void)setupTableViews:(NSArray<NSNumber*>*)tableViewTags
-             cellFiles:(NSArray<NSString*>*)cellFiles
+           cellClasses:(NSArray<Class>*)cellClasses
                cellIDs:(NSArray<NSString*>*)cellIDs {
     NSArray<NSNumber*>* arraysCount = @[
         [NSNumber numberWithUnsignedInteger:tableViewTags.count],
-        [NSNumber numberWithUnsignedInteger:cellFiles.count],
+        [NSNumber numberWithUnsignedInteger:cellClasses.count],
         [NSNumber numberWithUnsignedInteger:cellIDs.count]
     ];
     id minArrayCount = [arraysCount valueForKeyPath:@"@min.unsignedIntegerValue"];
     if ([minArrayCount isKindOfClass:[NSNumber class]]) {
         for (NSUInteger i = 0; i < ((NSNumber*)minArrayCount).unsignedIntegerValue; ++i) {
             UITableView* tableViewForTag = [self.view viewWithTag:tableViewTags[i].integerValue];
-            // [tableViewForTag registerNib:nibForCell forCellReuseIdentifier:cellIDs[i]];
-            [tableViewForTag registerClass:[RPNotesListTableViewCell class] forCellReuseIdentifier:@"NOTES_CELL_ID"];
+            [tableViewForTag registerClass:cellClasses[i] forCellReuseIdentifier:cellIDs[i]];
         }
     }
 }

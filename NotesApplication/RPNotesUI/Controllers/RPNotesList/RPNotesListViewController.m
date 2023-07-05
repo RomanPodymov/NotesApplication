@@ -17,9 +17,9 @@
 #import "RPCustomization.h"
 #import "RPNoteEditViewController.h"
 #import "RPNoteEditNavigationController.h"
+#import "RPNotesListTableViewCell.h"
 
 NSInteger const TAG_NOTES_TABLE_VIEW = 1000;
-NSString* const NOTES_TABLE_VIEW_CELL_XIB_NAME = @"RPNotesListTableViewCell";
 NSString* const NOTES_CELL_ID = @"NOTES_CELL_ID";
 NSInteger const TAG_NOTES_REFRESH_CONTROL = 1010;
 
@@ -41,18 +41,20 @@ NSString* const segueShowLanguages = @"showLanguages";
 #pragma mark Custom methods
 
 - (void)addSubviews {
-    self.notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
+    [super addSubviews];
     UITableView *notesTableView = [[UITableView alloc] initWithFrame:CGRectZero];
     notesTableView.tag = TAG_NOTES_TABLE_VIEW;
     notesTableView.delegate = self;
     notesTableView.dataSource = self;
     [self.view addSubview:notesTableView];
+    _notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
     _notesTableView = notesTableView;
 }
 
 #pragma mark UIKit methods
 
-- (void)updateViewConstraints {
+- (void)setupConstraints {
+    [super setupConstraints];
     UIEdgeInsets tableViewInsets = UIEdgeInsetsZero;
     if (@available(iOS 11.0, *)) {
         [self.notesTableView autoPinEdgesToSuperviewSafeAreaWithInsets:tableViewInsets];
@@ -63,7 +65,6 @@ NSString* const segueShowLanguages = @"showLanguages";
     [self.notesMessageView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.notesTableView];
     [self.notesMessageView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.view];
     [self.notesMessageView autoSetDimension:ALDimensionHeight toSize:RPCustomization.sharedInstance.notesGeometry.messageHeight.floatValue];
-    [super updateViewConstraints];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -119,8 +120,8 @@ NSString* const segueShowLanguages = @"showLanguages";
     return @[[NSNumber numberWithInteger:TAG_NOTES_TABLE_VIEW]];
 }
 
--(NSArray<NSString*>* _Nonnull)cellFiles {
-    return @[NOTES_TABLE_VIEW_CELL_XIB_NAME];
+-(NSArray<Class>* _Nonnull)cellClasses {
+    return @[[RPNotesListTableViewCell class]];
 }
 
 -(NSArray<NSString*>* _Nonnull)cellIDs {
@@ -177,7 +178,8 @@ NSString* const segueShowLanguages = @"showLanguages";
 
 @implementation RPNotesListViewController (UITableViewDataSourceMethods)
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell* result = [tableView dequeueReusableCellWithIdentifier:NOTES_CELL_ID forIndexPath:indexPath];
     if ([result isKindOfClass:[RPBaseTableViewCell class]]) {
         [(RPBaseTableViewCell*)result setupWithData:_notes[indexPath.row]];

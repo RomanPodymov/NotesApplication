@@ -7,7 +7,6 @@
 //
 
 @import Foundation;
-#import "RPNoteRequest.h"
 #import "RPGetNoteRequest.h"
 
 @interface RPEditNoteRequest: RPGetNoteRequest

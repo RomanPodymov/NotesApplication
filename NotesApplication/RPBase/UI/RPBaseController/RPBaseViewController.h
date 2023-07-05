@@ -36,15 +36,15 @@ typedef NS_ENUM(NSUInteger, CONTROLLER_MODE) {
 @property (nonatomic) CONTROLLER_MODE controllerMode;
 
 #pragma mark Custom methods
--(void)commonInit;
 -(void)addSubviews;
+-(void)setupConstraints;
 -(void)onControllerModeChanged;
 #pragma mark Bar customization
 -(NSString* _Nullable)textForLeftBarItem;
 -(NSString* _Nullable)textForRightBarItem;
 #pragma mark UITableView specific
 -(NSArray<NSNumber*>* _Nonnull)tableViewTags;
--(NSArray<NSString*>* _Nonnull)cellFiles;
+-(NSArray<Class>* _Nonnull)cellClasses;
 -(NSArray<NSString*>* _Nonnull)cellIDs;
 -(NSArray<NSNumber*>* _Nonnull)refreshControlsTags;
 #pragma mark Data initialization

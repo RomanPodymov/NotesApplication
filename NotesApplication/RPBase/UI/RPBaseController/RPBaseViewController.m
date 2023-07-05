@@ -64,12 +64,30 @@
 - (void)setupBar {
     NSString* textForLeftBarValue = [self textForLeftBarItem];
     if (textForLeftBarValue != nil) {
-        self.navigationItem.leftBarButtonItem.title = textForLeftBarValue;
+        self.navigationItem.leftBarButtonItem = [
+            [UIBarButtonItem alloc] initWithTitle:textForLeftBarValue
+                                            style:UIBarButtonItemStylePlain
+                                           target:self
+                                           action:@selector(onLeftBarButtonItemTap)
+        ];
     }
     NSString* textForRightBarValue = [self textForRightBarItem];
     if (textForRightBarValue != nil) {
-        self.navigationItem.rightBarButtonItem.title = textForRightBarValue;
+        self.navigationItem.rightBarButtonItem = [
+            [UIBarButtonItem alloc] initWithTitle:textForRightBarValue
+                                            style:UIBarButtonItemStylePlain
+                                           target:self
+                                           action:@selector(onRightBarButtonItemTap)
+        ];
     }
+}
+
+-(void)onLeftBarButtonItemTap {
+    
+}
+
+-(void)onRightBarButtonItemTap {
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

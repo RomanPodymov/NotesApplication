@@ -22,7 +22,8 @@
 
 #pragma mark UIKit methods
 
-- (void)updateViewConstraints {
+- (void)setupConstraints {
+    [super setupConstraints];
     NSNumber* localesStackViewTopOffset = RPCustomization.sharedInstance.langsGeometry.buttonsTopOffset;
     UIEdgeInsets localesStackViewInsets = UIEdgeInsetsMake(localesStackViewTopOffset.floatValue, 0.0, 0.0, 0.0);
     if (@available(iOS 11.0, *)) {
@@ -30,13 +31,10 @@
     } else {
         [self.localesStackView autoPinEdgesToSuperviewEdgesWithInsets:localesStackViewInsets];
     }
-    [super updateViewConstraints];
 }
 
-- (IBAction)onBackBarButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+- (void)onLeftBarButtonItemTap {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark Bar customization
@@ -61,6 +59,7 @@
 
 -(void)onDataLoaded:(id _Nullable)data {
     [self createButtonsWithLocales:data];
+    [self setupConstraints];
 }
 
 -(void)onDataLoadingError:(NSError* _Nonnull)error {
@@ -82,9 +81,6 @@
 }
 
 -(void)clearLocaleButtons {
-    /*[_localesStackView bk_eachSubview:^(UIView *subview) {
-        [subview removeFromSuperview];
-    }];*/
     [_localesStackView removeFromSuperview];
     _localesStackView = nil;
 }

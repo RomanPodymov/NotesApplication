@@ -18,6 +18,7 @@
 #import "RPNoteEditViewController.h"
 #import "RPNoteEditNavigationController.h"
 #import "RPNotesListTableViewCell.h"
+#import "RPLanguagesViewController.h"
 
 NSInteger const TAG_NOTES_TABLE_VIEW = 1000;
 NSString* const NOTES_CELL_ID = @"NOTES_CELL_ID";
@@ -49,6 +50,11 @@ NSString* const segueShowLanguages = @"showLanguages";
     [self.view addSubview:notesTableView];
     _notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
     _notesTableView = notesTableView;
+}
+
+-(void)onLeftBarButtonItemTap {
+    RPLanguagesViewController* languagesViewController = [RPLanguagesViewController new];
+    [self.navigationController pushViewController:languagesViewController animated:YES];
 }
 
 #pragma mark UIKit methods

@@ -53,7 +53,7 @@ typedef void(^NoteHandler)(id _Nullable);
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)onRightBarButtonPressed:(id)sender {
+- (void)onRightBarButtonItemTap {
     switch (self.controllerMode) {
         case CONTROLLER_MODE_ADD:
             [self addNewNote];
@@ -72,12 +72,13 @@ typedef void(^NoteHandler)(id _Nullable);
 }
 
 -(void)showMoreVariants {
+    __weak RPNoteEditViewController* weakSelf = self;
     [self showItemsList:@[
         [[RPListItemParams alloc] initWithTitle:[RPLocalizationMaster.sharedInstance translate:TRANSLATION_KEY_BTN_EDIT] handler:^{
-            [self editNote];
+            [weakSelf editNote];
         }],
         [[RPListItemParams alloc] initWithTitle:[RPLocalizationMaster.sharedInstance translate:TRANSLATION_KEY_BTN_DELETE] handler:^{
-            [self deleteNote];
+            [weakSelf deleteNote];
         }]
     ]];
 }
@@ -168,12 +169,11 @@ typedef void(^NoteHandler)(id _Nullable);
 }
 
 -(void)handleSuccess:(NSString* _Nonnull)message {
+    __weak RPNoteEditViewController *weakSelf = self;
     [self showMessageWithTitle:[RPLocalizationMaster.sharedInstance translate:TRANSLATION_KEY_MESSAGE]
                    messageText:message
                        handler:^{
-        [self dismissViewControllerAnimated:YES completion:^{
-                               
-        }];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
 }
 

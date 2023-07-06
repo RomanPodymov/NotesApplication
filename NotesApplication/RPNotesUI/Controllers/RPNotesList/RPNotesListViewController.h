@@ -9,7 +9,7 @@
 @import UIKit;
 #import "RPBaseViewController.h"
 
-extern NSString* _Nonnull const TABLE_VIEW_ACCESS_LABEL;
+#define TABLE_VIEW_ACCESS_LABEL @"Notes table view"
 
 @interface RPNotesListViewController: RPBaseViewController
 

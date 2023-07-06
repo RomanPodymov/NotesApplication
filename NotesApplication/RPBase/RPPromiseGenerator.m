@@ -35,38 +35,44 @@ typedef void(^PromiseBlock)(PMKResolver);
 }
 
 -(AnyPromise* _Nonnull)promiseToGetAllNotes {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider loadNotesListWithHandler:PROMISE_HANDLER];
+        [weakSelf.dataProvider loadNotesListWithHandler:PROMISE_HANDLER];
     }];
 }
 
 -(AnyPromise* _Nonnull)promiseToGetNoteForID:(NOTE_ID)nodeID {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider loadNoteWithID:nodeID handler:PROMISE_HANDLER];
+        [weakSelf.dataProvider loadNoteWithID:nodeID handler:PROMISE_HANDLER];
     }];
 }
 
 -(AnyPromise* _Nonnull)promiseToAddNote:(RPNote* _Nonnull)note {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider addNote:note handler:PROMISE_HANDLER];
+        [weakSelf.dataProvider addNote:note handler:PROMISE_HANDLER];
     }];
 }
 
 -(AnyPromise* _Nonnull)promiseToEditNote:(RPNote* _Nonnull)note {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider editNote:note handler:PROMISE_HANDLER];
+        [weakSelf.dataProvider editNote:note handler:PROMISE_HANDLER];
     }];
 }
 
 -(AnyPromise* _Nonnull)promiseToDeleteNote:(RPNote* _Nonnull)note {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider deleteNote:note handler:PROMISE_HANDLER];
+        [weakSelf.dataProvider deleteNote:note handler:PROMISE_HANDLER];
     }];
 }
 
 -(AnyPromise* _Nonnull)promiseToGetAllLocales {
+    __weak RPPromiseGenerator *weakSelf = self;
     return [self genericPromise:^(PMKResolver resolver) {
-        [self->_dataProvider loadLocalesListWithHandler:PROMISE_HANDLER];
+        [weakSelf.dataProvider loadLocalesListWithHandler:PROMISE_HANDLER];
     }];
 }
 

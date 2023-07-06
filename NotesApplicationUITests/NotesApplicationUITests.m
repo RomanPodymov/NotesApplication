@@ -25,7 +25,7 @@
 }
 
 - (void)testTableView {
-    /*XCUIElement* notesTableView = [[self.application.tables matchingIdentifier:TABLE_VIEW_ACCESS_LABEL] elementBoundByIndex:0];
+    XCUIElement* notesTableView = [[self.application.tables matchingIdentifier:TABLE_VIEW_ACCESS_LABEL] elementBoundByIndex:0];
     if ([notesTableView waitForExistenceWithTimeout:120.0]) {
         XCUIElement* firstCell = [notesTableView.cells elementBoundByIndex:0];
         if ([firstCell waitForExistenceWithTimeout:120.0]) {
@@ -35,7 +35,7 @@
         }
     } else {
         XCTFail(@"Table view not found");
-    }*/
+    }
 }
 
 @end

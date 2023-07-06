@@ -23,8 +23,6 @@ NSInteger const TAG_NOTES_TABLE_VIEW = 1000;
 NSString* const NOTES_CELL_ID = @"NOTES_CELL_ID";
 NSInteger const TAG_NOTES_REFRESH_CONTROL = 1010;
 
-NSString* const TABLE_VIEW_ACCESS_LABEL = @"Notes table view";
-
 @interface RPNotesListViewController ()
 
 @property (weak, nonatomic) UITableView *notesTableView;
@@ -43,7 +41,7 @@ NSString* const TABLE_VIEW_ACCESS_LABEL = @"Notes table view";
     notesTableView.delegate = self;
     notesTableView.dataSource = self;
     [self.view addSubview:notesTableView];
-    _notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
+    notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
     _notesTableView = notesTableView;
 }
 

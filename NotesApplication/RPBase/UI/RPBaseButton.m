@@ -42,7 +42,6 @@
 -(void)commonInit {
     [self observeLocaleChanges];
     [self customize];
-    [self setNeedsUpdateConstraints];
 }
 
 @end

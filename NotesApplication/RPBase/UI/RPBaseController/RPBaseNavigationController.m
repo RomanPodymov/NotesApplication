@@ -22,10 +22,6 @@
     [self.view setNeedsUpdateConstraints];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 @end
 
 @implementation RPBaseNavigationController (RPLocalizableStuff)

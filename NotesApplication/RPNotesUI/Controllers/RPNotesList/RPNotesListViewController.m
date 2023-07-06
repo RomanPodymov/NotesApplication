@@ -43,6 +43,9 @@ NSInteger const TAG_NOTES_REFRESH_CONTROL = 1010;
     [self.view addSubview:notesTableView];
     notesTableView.accessibilityLabel = TABLE_VIEW_ACCESS_LABEL;
     _notesTableView = notesTableView;
+    RPMessageView *notesMessageView = [[RPMessageView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:notesMessageView];
+    _notesMessageView = notesMessageView;
 }
 
 -(void)onLeftBarButtonItemTap {

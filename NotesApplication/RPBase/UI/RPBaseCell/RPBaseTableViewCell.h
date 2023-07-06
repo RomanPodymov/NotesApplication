@@ -16,6 +16,10 @@
 
 @end
 
+@interface RPBaseTableViewCell(RPInitializableStuff) <RPInitializable>
+
+@end
+
 @interface RPBaseTableViewCell(RPSettableStuff) <RPSettable>
 
 @end

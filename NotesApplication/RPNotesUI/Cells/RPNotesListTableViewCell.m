@@ -19,15 +19,12 @@
 
 @implementation RPNotesListTableViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        UILabel* labelNoteShortDescription = [[UILabel alloc] initWithFrame:CGRectZero];
-        [self.contentView addSubview:labelNoteShortDescription];
-        self.labelNoteShortDescription = labelNoteShortDescription;
-        [self setupConstraints];
-    }
-    return self;
+- (void)commonInit {
+    [super commonInit];
+    UILabel* labelNoteShortDescription = [[UILabel alloc] initWithFrame:CGRectZero];
+    [self.contentView addSubview:labelNoteShortDescription];
+    self.labelNoteShortDescription = labelNoteShortDescription;
+    [self setupConstraints];
 }
 
 - (void)setupConstraints {
@@ -47,7 +44,6 @@
                                          toEdge:ALEdgeBottom
                                          ofView:self.contentView
                                      withOffset:-1 * RPCustomization.sharedInstance.notesGeometry.cellInsetBottom.floatValue];
-    [super updateConstraints];
 }
 
 -(void)setupWithData:(id _Nullable)data {

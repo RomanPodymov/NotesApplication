@@ -26,11 +26,11 @@
     _messageLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _messageLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_messageLabel];
+    [self setupConstraints];
 }
 
--(void)updateConstraints {
+-(void)setupConstraints {
     [_messageLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
-    [super updateConstraints];
 }
 
 -(NSString* _Nullable)messageText {
@@ -66,6 +66,18 @@
 -(void)onLocaleChanged:(NSString *)nextLocale {
     [super onLocaleChanged:nextLocale];
     [self setupTranslatedMessageText];
+}
+
+#pragma mark Customizable
+
+-(void)customize {
+    [self setupStyles];
+}
+
+#pragma mark Styleable
+
+-(void)setupStyles {
+    self.backgroundColor = RPCustomization.sharedInstance.colors.colorMedium;
 }
 
 @end

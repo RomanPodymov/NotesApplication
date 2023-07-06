@@ -19,3 +19,11 @@ targets:
       - target: NotesApplicationApp
     info:
       path: NotesApplicationTests/Info.plist
+  NotesApplicationUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [NotesApplicationUITests]
+    dependencies:
+      - target: NotesApplicationApp
+    info:
+      path: NotesApplicationUITests/Info.plist

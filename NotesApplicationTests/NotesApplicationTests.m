@@ -24,14 +24,6 @@ typedef void(^InvocationBlock)(NSInvocation*);
 
 @implementation NotesApplicationTests
 
-- (void)setUp {
-    [super setUp];
-}
-
-- (void)tearDown {
-    [super tearDown];
-}
-
 - (void)testNoteInitializationWithIdAndTitle {
     NOTE_ID randomId = arc4random_uniform(INT_MAX - 1);
     NOTE_NAME* randomTitle = [NSUUID UUID].UUIDString;

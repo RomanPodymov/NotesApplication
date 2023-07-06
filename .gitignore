@@ -3,3 +3,4 @@ NotesApplication.xcworkspace
 NotesApplication.xcodeproj
 NotesApplication/Info.plist
 NotesApplicationTests/Info.plist
+NotesApplicationUITests/Info.plist

@@ -10,14 +10,14 @@
 @import AFNetworking;
 
 #define SESSION_MANAGER_REQUEST(METHOD_NAME, URL_VALUE, PARAMS, HANDLER) \
-    [_sessionManager METHOD_NAME:URL_VALUE parameters:PARAMS success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) { \
+    [_sessionManager METHOD_NAME:URL_VALUE parameters:PARAMS headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) { \
         HANDLER(responseObject, nil); \
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) { \
         HANDLER(nil, error); \
     }];
 
 #define SESSION_MANAGER_REQUEST_WITH_PROGRESS(METHOD_NAME, URL_VALUE, PARAMS, HANDLER) \
-    [_sessionManager METHOD_NAME:URL_VALUE parameters:PARAMS progress:^(NSProgress* _Nonnull downloadProgress) { \
+    [_sessionManager METHOD_NAME:URL_VALUE parameters:PARAMS headers:nil progress:^(NSProgress* _Nonnull downloadProgress) { \
     } success:^(NSURLSessionDataTask* _Nonnull task, id _Nullable responseObject) { \
         HANDLER(responseObject, nil); \
     } failure:^(NSURLSessionDataTask* _Nullable task, NSError * _Nonnull error) { \

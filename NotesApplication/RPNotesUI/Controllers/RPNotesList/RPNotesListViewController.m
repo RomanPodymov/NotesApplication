@@ -137,12 +137,6 @@ NSInteger const TAG_NOTES_REFRESH_CONTROL = 1010;
     self.notesMessageView.messageTextTranslationKey = messageTextKey;
 }
 
-#pragma mark Localizable
-
--(void)onLocaleChanged:(NSString *)nextLocale {
-    [super onLocaleChanged:nextLocale];
-}
-
 #pragma mark Styleable
 
 -(void)setupStyles {

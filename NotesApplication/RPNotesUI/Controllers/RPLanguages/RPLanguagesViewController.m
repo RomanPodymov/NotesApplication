@@ -103,16 +103,4 @@
     return result;
 }
 
-#pragma mark Localizable
-
--(void)onLocaleChanged:(NSString *)nextLocale {
-    [super onLocaleChanged:nextLocale];
-}
-
-#pragma mark Styleable
-
--(void)setupStyles {
-    [super setupStyles];
-}
-
 @end

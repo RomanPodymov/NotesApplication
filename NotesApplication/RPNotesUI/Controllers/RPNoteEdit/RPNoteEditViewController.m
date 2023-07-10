@@ -235,12 +235,6 @@ typedef void(^NoteHandler)(id _Nullable);
     
 }
 
-#pragma mark Localizable
-
--(void)onLocaleChanged:(NSString *)nextLocale {
-    [super onLocaleChanged:nextLocale];
-}
-
 @end
 
 @implementation RPNoteEditViewController(RPSettableStuff)

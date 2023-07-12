@@ -64,7 +64,7 @@ DEPENDENCIES:
   - XMLDictionary (= 1.4.1)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - BlocksKit
     - Hero
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   "UIColor+Hex": 9fee91bb8e19f17dd40a79ae1e98949a6a84489d
   XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
 
-PODFILE CHECKSUM: 52d3c4f8c96bc16c2232a7737207c598d5016803
+PODFILE CHECKSUM: f6b1a3831b575de73a275bf2112c7704d1eb9de4
 
 COCOAPODS: 1.12.1

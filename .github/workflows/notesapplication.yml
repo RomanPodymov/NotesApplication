@@ -27,4 +27,4 @@ jobs:
       - name: CocoaPods
         run: bundle exec pod install
       - name: Build and test
-        run: xcodebuild test -workspace NotesApplication.xcworkspace -scheme NotesApplicationApp -destination "platform=iOS Simulator,OS=16.0,name=iPhone 14"
+        run: xcodebuild test -workspace NotesApplication.xcworkspace -scheme NotesApplicationApp -destination "platform=iOS Simulator,OS=17.0.1,name=iPhone 14"
